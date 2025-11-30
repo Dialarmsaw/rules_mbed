@@ -16,13 +16,13 @@
 
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
-
-http_archive(
-    name = "arm_gcc",
-    urls = [
-        "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v12.2.1-1/xpack-arm-none-eabi-gcc-12.2.1-1-linux-x64.tar.gz",
-    ],
-    sha256 = "7a3171c47b81c14404d5c755b2e8fcf80fcbeb021e8e3dfef3f7c74a61bb8aac",
-    strip_prefix = "xpack-arm-none-eabi-gcc-12.2.1-1",
-    build_file = Label("//tools/workspace/arm_gcc:package.BUILD"),
-)
+def arm_gcc_repository(name):
+    http_archive(
+        name = name,
+        urls = [
+            "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v12.2.1-1/xpack-arm-none-eabi-gcc-12.2.1-1-linux-x64.tar.gz",
+        ],
+        sha256 = "7a3171c47b81c14404d5c755b2e8fcf80fcbeb021e8e3dfef3f7c74a61bb8aac",
+        strip_prefix = "xpack-arm-none-eabi-gcc-12.2.1-1",
+        build_file = Label("//tools/workspace/arm_gcc:package.BUILD"),
+    )
