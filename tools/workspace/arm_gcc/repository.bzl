@@ -23,6 +23,6 @@ def arm_gcc_repository(name):
             "https://github.com/xpack-dev-tools/arm-none-eabi-gcc-xpack/releases/download/v12.3.1-1.2/xpack-arm-none-eabi-gcc-12.3.1-1.2-linux-x64.tar.gz",
         ],
         sha256 = "771dfb9d10e7339ac40f3a32be9cd287405c537ca0bf16e1dbf6fa6f1fc1dd2a",
-        strip_prefix = "xpack-arm-none-eabi-gcc-12.3.1-1.2-linux-x64",
+        strip_prefix = "xpack-arm-none-eabi-gcc-12.3.1-1.2",
         build_file = Label("//tools/workspace/arm_gcc:package.BUILD"),
     )
